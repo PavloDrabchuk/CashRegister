@@ -1,6 +1,7 @@
 #pragma once
 #include "CashRegister.h"
 class SeaportCashRegister :private CashRegister {
+public:
     SeaportCashRegister();
 
     SeaportCashRegister(

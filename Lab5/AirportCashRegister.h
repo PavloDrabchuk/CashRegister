@@ -17,6 +17,6 @@ public:
 
     void showTicketType();
 
-    void callTaxi(string taxiRouteTo, string comment, string phoneNumber, string choice);
+    void callTaxi();
 };
 

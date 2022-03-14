@@ -179,7 +179,7 @@ public:
     //   - для літака: треба вказати термінал
     //   - для корабля: треба вказати док(?)
 
-    string* getCallTaxiInfo();
+    string* getCallTaxiInfo(string taxiInfo[]);
 
     void displayTaxiTicketInfo(string* taxiCallInfo);
 };

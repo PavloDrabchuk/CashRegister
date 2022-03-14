@@ -39,5 +39,17 @@ void RailwayCashRegister::showTicketNumber() {
 }
 
 void RailwayCashRegister::callTaxi() {
-    cout << "Залізничний вокзал: таксі викликано.\n";
+    //cout << "Залізничний вокзал: таксі викликано.\n";
+    string taxiInfo[4];
+    //string *taxiInfo = getCallTaxiInfo();
+    getCallTaxiInfo(taxiInfo);
+    //cout << "---> " << taxiInfo[0] << endl;
+
+    //string terminal;
+
+    //cout << "До якого терміналу подати авто?\n >> ";
+    //getline(cin, terminal);
+
+    cout << "Залізничний вокзал:\n >> Таксі викликано:\n";
+    displayTaxiTicketInfo(taxiInfo);
 }

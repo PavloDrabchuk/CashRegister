@@ -31,7 +31,7 @@ void AirportCashRegister::showTicketType() {
     cout << " виток на л≥так.\n";
 }
 
-void AirportCashRegister::callTaxi(string taxiRouteTo, string comment, string phoneNumber, string choice) {
+void AirportCashRegister::callTaxi() {
     /*cin.ignore();
     string taxiRouteTo, comment="", phoneNumber, choice="";
     cout << " уди потр≥бно в≥дправитись?\n >> ";
@@ -50,8 +50,10 @@ void AirportCashRegister::callTaxi(string taxiRouteTo, string comment, string ph
 
     cout << "¬вед≥ть коментар дл€ вод≥€: ";
     getline(cin, comment);*/
-
-    string *taxiInfo = getCallTaxiInfo();
+    string taxiInfo[4];
+    //string *taxiInfo = getCallTaxiInfo();
+    getCallTaxiInfo(taxiInfo);
+    //cout << "---> " << taxiInfo[0] << endl;
 
     string terminal;
 

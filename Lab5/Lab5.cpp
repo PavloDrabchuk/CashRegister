@@ -19,7 +19,7 @@ using namespace std;
 
 unsigned int CashRegister::countCashRegisters = 0;
 
-void poly(TicketOffice* c) {
+void poly(TicketOffice* t) {
     //c->showTicketType();
    
     /*cin.ignore();
@@ -42,8 +42,12 @@ void poly(TicketOffice* c) {
     getline(cin, comment);
     */
 
-    c->callTaxi();
+    t->callTaxi();
     //c->callTaxi();
+}
+
+void poly2(TicketOffice* t) {
+    t->showTicketType();
 }
 
 
@@ -101,7 +105,7 @@ int main()
     //r.showTicketType();
     
     //r.callTaxi();
-
+    
     cout << "\nRailwayCashRegister:\n";
     //cout << " [public] - Ім'я пасажира: " << r.passenger_name << endl;
     //cout << " [protected] - Номер квитка: " << r.getTicket() << endl;
@@ -118,8 +122,8 @@ int main()
     // todo: Таке саме для Аеропорту та Морського порту
 
     // ========= 1.3.3 =========
-    //cout << "TicketOffice.CashRegister.RailwayCashRegister.ticket - Номер каси: " << r.ticket << endl;
-    //cout << "TicketOffice.CashRegister.ticket - Номер каси: " << cashRegister1.ticket << endl;
+    //cout << "RailwayCashRegister.ticket - Номер каси: " << r.ticket << endl;
+    //cout << "CashRegister.ticket - Номер каси: " << cashRegister1.ticket << endl;
 
     cout << "1.3.4:\n";
     cout << "CashRegister.passenger_name: " << cashRegister1.passenger_name << endl;
@@ -132,6 +136,16 @@ int main()
     //SeaportCashRegister s;
     
     poly(&a);
+
+    poly(&r);
+
+    SeaportCashRegister s;
+    s.callTaxi();
+    //poly(&s);
+
+    poly2(&a);
+    poly2(&r);
+    s.showTicketType();
 
 
 

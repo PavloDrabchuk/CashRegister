@@ -636,8 +636,8 @@ void CashRegister::showTicketType() {
 //   - для літака: треба вказати термінал
 //   - для корабля: треба вказати док(?)
 
-string *CashRegister::getCallTaxiInfo() {
-    string taxiInfo[4];
+string* CashRegister::getCallTaxiInfo(string taxiInfo[]) {
+    //string taxiInfo[4];
     cin.ignore();
     // string taxiRouteTo, phoneNumber, choice = "", comment = "";
     cout << "Куди потрібно відправитись?\n >> ";
@@ -656,7 +656,7 @@ string *CashRegister::getCallTaxiInfo() {
 
     cout << "Введіть коментар для водія: ";
     getline(cin, taxiInfo[3]);
-
+    //cout << "===> " << taxiInfo[0] << endl;
     return taxiInfo;
 }
 
