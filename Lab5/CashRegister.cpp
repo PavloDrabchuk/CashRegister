@@ -621,9 +621,9 @@ istream& operator>>(istream& input, CashRegister& cashRegister) {
 ////// virtual void showTicketType() = 0;
 //virtual void sellTicket() = 0;
 
-void CashRegister::callTaxi() {
-    cout << "Таксі викликано.\n";
-}
+ void CashRegister::callTaxi() {
+     cout << "Таксі викликано.\n";
+ }
 
 void CashRegister::showTicketType() {
     cout << "Універсальний квиток.\n";

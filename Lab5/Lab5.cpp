@@ -99,6 +99,8 @@ int main()
         
     //RailwayCashRegister r(2, workingHours, count_of_routs, routs, 0, 1000, 50);
     RailwayCashRegister r;
+    AirportCashRegister a;
+    SeaportCashRegister s;
     cout << "\nВведення інформації з клавіатури для екземпляру класу-нащадка:\n";
     r.init();
     
@@ -127,15 +129,17 @@ int main()
     // ========= 1.3.3 =========
     //cout << "RailwayCashRegister.ticket - Номер каси: " << r.ticket << endl;
     //cout << "CashRegister.ticket - Номер каси: " << cashRegister1.ticket << endl;
+    //cout << "SeaportCashRegister.passenger_name - Ім'я пасажира: " << s.passenger_name << endl;
 
+    
     cout << "1.3.4:\n";
     cout << "CashRegister.passenger_name: " << cashRegister1.passenger_name << endl;
     cout << "RailwayCashRegister.passenger_name: " << r.passenger_name << endl;
     
-    cout << "\n2.1 \"Поліморфна функція\":\n";
+    cout << "\n2. \"Поліморфна функція\":\n";
     callTaxiPoly(&r);
-
-    AirportCashRegister a;
+    
+    
     //a.setTerminal("2B");
     //SeaportCashRegister s;
     
@@ -144,7 +148,7 @@ int main()
 
     //callTaxiPoly(&r);
 
-    SeaportCashRegister s;
+    
     s.callTaxi();
     //poly(&s);
 

@@ -52,12 +52,10 @@ void AirportCashRegister::callTaxi() {
 
     cout << "Введіть коментар для водія: ";
     getline(cin, comment);*/
-    string taxiInfo[4];
+    string taxiInfo[4], terminal;
     //string *taxiInfo = getCallTaxiInfo();
     getCallTaxiInfo(taxiInfo);
     //cout << "---> " << taxiInfo[0] << endl;
-
-    string terminal;
 
     cout << "До якого терміналу подати авто?\n >> ";
     getline(cin, terminal);
