@@ -31,6 +31,7 @@ void SeaportCashRegister::showTicketType() {
     cout << "Квиток на морський транспорт.\n";
 }
 void SeaportCashRegister::callTaxi() {
+    cout << "\n >> Виклик таксі [Морський вокзал] <<\n";
 
     //cout << "Залізничний вокзал: таксі викликано.\n";
     string taxiInfo[4];
@@ -43,7 +44,7 @@ void SeaportCashRegister::callTaxi() {
     //cout << "До якого терміналу подати авто?\n >> ";
     //getline(cin, terminal);
 
-    cout << "Морський вокзал:\n >> Таксі викликано:\n";
+    cout << "\nМорський вокзал:\n >> Таксі викликано:\n";
     displayTaxiTicketInfo(taxiInfo);
     //cout << "Порт: таксі викликано.\n";
 }

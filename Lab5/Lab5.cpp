@@ -19,7 +19,7 @@ using namespace std;
 
 unsigned int CashRegister::countCashRegisters = 0;
 
-void poly(TicketOffice* t) {
+void callTaxiPoly(TicketOffice* t) {
     //c->showTicketType();
    
     /*cin.ignore();
@@ -46,7 +46,7 @@ void poly(TicketOffice* t) {
     //c->callTaxi();
 }
 
-void poly2(TicketOffice* t) {
+void showTicketTypePoly(TicketOffice* t) {
     t->showTicketType();
 }
 
@@ -56,22 +56,22 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-    char buffer[80];
+    //char buffer[80];
 
-    time_t midnight = getMidnight();
+    //time_t midnight = getMidnight();
 
-    time_t now = time(0);
-    tm timeinfo;
+    //time_t now = time(0);
+    //tm timeinfo;
 
-    localtime_s(&timeinfo, &now);
-    strftime(buffer, 80, " *** Зараз: %d.%m.%G %H:%M:%S ***\n", &timeinfo);
-    cout << buffer;
+    //localtime_s(&timeinfo, &now);
+    //strftime(buffer, 80, " *** Зараз: %d.%m.%G %H:%M:%S ***\n", &timeinfo);
+    //cout << buffer;
 
     int hours_and_minutes[] = { 9,0,17,50,13,00,14,0 };
     // int hours_and_minutes[] = { 17,0,23,50,18,30,19,50 };
 
     long long workingHours[4];
-    generateWorkingHours(hours_and_minutes, midnight, workingHours);
+    generateWorkingHours(hours_and_minutes, getMidnight(), workingHours);
 
     const unsigned int count_of_routs = 4;
     Route* routs = new Route[count_of_routs]{
@@ -95,20 +95,23 @@ int main()
     //cashRegister.sellTicket();
     //cashRegister.callTaxi();
     
-    cout << endl << "1.3.2:\n";
+    //cout << endl << "1.3.2:\n";
         
     //RailwayCashRegister r(2, workingHours, count_of_routs, routs, 0, 1000, 50);
     RailwayCashRegister r;
+    cout << "\nВведення інформації з клавіатури для екземпляру класу-нащадка:\n";
     r.init();
-    
     
     //r.showTicketType();
     
     //r.callTaxi();
     
+    cout << "\n1.3.2:\n";
+
     cout << "\nRailwayCashRegister:\n";
     //cout << " [public] - Ім'я пасажира: " << r.passenger_name << endl;
     //cout << " [protected] - Номер квитка: " << r.getTicket() << endl;
+    
     cout << " [TicketOffice.number] - Номер каси: " << r.getNumber() << endl;
     r.passenger_name = "Сергій Роженко"; // ім'я задається так, бо після продажу квитка має бути очищеним
     cout << " [TicketOffice.passenger_name] - Ім'я пасажира: " << r.passenger_name << endl;
@@ -129,22 +132,26 @@ int main()
     cout << "CashRegister.passenger_name: " << cashRegister1.passenger_name << endl;
     cout << "RailwayCashRegister.passenger_name: " << r.passenger_name << endl;
     
-    cout << "2.1:\n";
-    
+    cout << "\n2.1 \"Поліморфна функція\":\n";
+    callTaxiPoly(&r);
+
     AirportCashRegister a;
     //a.setTerminal("2B");
     //SeaportCashRegister s;
     
-    poly(&a);
+    //callTaxiPoly(&a);
+    a.callTaxi();
 
-    poly(&r);
+    //callTaxiPoly(&r);
 
     SeaportCashRegister s;
     s.callTaxi();
     //poly(&s);
 
-    poly2(&a);
-    poly2(&r);
+    cout << "\nВикористання поліморфної функції для перевірки типу квитка:\n";
+    showTicketTypePoly(&r);
+    //showTicketTypePoly(&a);
+    a.showTicketType();
     s.showTicketType();
 
 

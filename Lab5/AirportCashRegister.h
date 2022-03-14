@@ -1,6 +1,6 @@
 #pragma once
 #include "CashRegister.h"
-class AirportCashRegister :public CashRegister {
+class AirportCashRegister :protected CashRegister {
     //string terminal{};
 public:
 

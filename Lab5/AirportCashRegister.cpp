@@ -32,6 +32,8 @@ void AirportCashRegister::showTicketType() {
 }
 
 void AirportCashRegister::callTaxi() {
+    cout << "\n >> Виклик таксі [Аеропорт] <<\n";
+
     /*cin.ignore();
     string taxiRouteTo, comment="", phoneNumber, choice="";
     cout << "Куди потрібно відправитись?\n >> ";
@@ -60,7 +62,7 @@ void AirportCashRegister::callTaxi() {
     cout << "До якого терміналу подати авто?\n >> ";
     getline(cin, terminal);
 
-    cout << "Аеропорт:\n >> Таксі викликано:\n  Термінал: " << terminal << ".\n";
+    cout << "\nАеропорт:\n >> Таксі викликано:\n  Термінал: " << terminal << ".\n";
     displayTaxiTicketInfo(taxiInfo);
     /*cout << "  Адреса відправлення: " << taxiRouteTo << ".\n";
     cout << "  Мобільний номер: " << phoneNumber << ".\n";

@@ -1,7 +1,7 @@
 #include "RailwayCashRegister.h"
 
 RailwayCashRegister::RailwayCashRegister() {
-    cout << "Default Railway constructor.\n";
+    //cout << "Default Railway constructor.\n";
 }
 
 RailwayCashRegister::RailwayCashRegister(
@@ -39,6 +39,7 @@ void RailwayCashRegister::showTicketNumber() {
 }
 
 void RailwayCashRegister::callTaxi() {
+    cout << "\n >> Виклик таксі [Залізничний вокзал] <<\n";
     //cout << "Залізничний вокзал: таксі викликано.\n";
     string taxiInfo[4];
     //string *taxiInfo = getCallTaxiInfo();
@@ -50,6 +51,6 @@ void RailwayCashRegister::callTaxi() {
     //cout << "До якого терміналу подати авто?\n >> ";
     //getline(cin, terminal);
 
-    cout << "Залізничний вокзал:\n >> Таксі викликано:\n";
+    cout << "\nЗалізничний вокзал:\n >> Таксі викликано:\n";
     displayTaxiTicketInfo(taxiInfo);
 }
