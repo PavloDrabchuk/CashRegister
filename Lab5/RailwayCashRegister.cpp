@@ -14,7 +14,6 @@ RailwayCashRegister::RailwayCashRegister(
     int paper) {
 
     setNumber(number);
-    //this->number = number;
 
     for (int i = 0; i < 4; i++) {
         this->workingHours[i] = workingHours[i];
@@ -40,16 +39,9 @@ void RailwayCashRegister::showTicketNumber() {
 
 void RailwayCashRegister::callTaxi() {
     cout << "\n >> Виклик таксі [Залізничний вокзал] <<\n";
-    //cout << "Залізничний вокзал: таксі викликано.\n";
+
     string taxiInfo[4];
-    //string *taxiInfo = getCallTaxiInfo();
     getCallTaxiInfo(taxiInfo);
-    //cout << "---> " << taxiInfo[0] << endl;
-
-    //string terminal;
-
-    //cout << "До якого терміналу подати авто?\n >> ";
-    //getline(cin, terminal);
 
     cout << "\nЗалізничний вокзал:\n >> Таксі викликано:\n";
     displayTaxiTicketInfo(taxiInfo);

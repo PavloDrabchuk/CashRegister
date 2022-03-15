@@ -1,19 +1,5 @@
 #include "CashRegister.h"
 #include "WorkingHours.h"
-//#include "Lab5.cpp"
-//#include "Route.cpp"
-
-/*long long* generateWorkingHours(int hm[8], long long midnight, long long workingHours[]) {
-    for (int i = 0; i < 4; i++) {
-        workingHours[i] = midnight + (static_cast<long long>(hm[i * 2]) - 2) * 3600 + static_cast<long long>(hm[i * 2 + 1]) * 60;
-    }
-    return workingHours;
-}
-
-time_t getMidnight() {
-    time_t now = time(0);
-    return now - now % 86400;
-}*/
 
 // конструктор по замовчуванню
 CashRegister::CashRegister() {
@@ -31,7 +17,6 @@ CashRegister::CashRegister(
     int paper) {
 
     setNumber(number);
-    //this->number = number;
 
     for (int i = 0; i < 4; i++) {
         this->workingHours[i] = workingHours[i];
@@ -49,9 +34,6 @@ CashRegister::CashRegister(
 
 // конструктор копіювання
 CashRegister::CashRegister(CashRegister& cashRegister) {
-    // todo тут треба буде розібратись
-    //this->number = cashRegister.number;
-    //setNumber(cashRegister.)
     this->setNumber(cashRegister.getNumber());
 
     for (int i = 0; i < 4; i++) {
@@ -83,16 +65,7 @@ CashRegister::CashRegister(CashRegister& cashRegister) {
 // деструктор
 CashRegister::~CashRegister() {
     countCashRegisters--;
-    // cout << "Деструктор застосовано.\n";
 }
-
-/*int getNumber() {
-    return number;
-}
-
-void setNumber(int n) {
-    this->number = n;
-}*/
 
 unsigned int CashRegister::getTicket() {
     return ticket;
@@ -615,39 +588,22 @@ istream& operator>>(istream& input, CashRegister& cashRegister) {
     return cashRegister1.countTickets >= cashRegister2.countTickets;
 }
 
-
-
-//virtual int getArea() = 0;
-////// virtual void showTicketType() = 0;
-//virtual void sellTicket() = 0;
-
- void CashRegister::callTaxi() {
-     cout << "Таксі викликано.\n";
- }
+void CashRegister::callTaxi() {
+    cout << "Таксі викликано.\n";
+}
 
 void CashRegister::showTicketType() {
     cout << "Універсальний квиток.\n";
 }
 
-
-// метод викликати таксі
-// Різниця: 
-//   - для поїзда: адреса одна
-//   - для літака: треба вказати термінал
-//   - для корабля: треба вказати док(?)
-
 string* CashRegister::getCallTaxiInfo(string taxiInfo[]) {
-    //string taxiInfo[4];
     cin.ignore();
-    // string taxiRouteTo, phoneNumber, choice = "", comment = "";
+
     cout << "Куди потрібно відправитись?\n >> ";
     getline(cin, taxiInfo[0]);
-    //cin >> taxiRouteTo;
 
     cout << "Введіть Ваш мобільний номер: ";
     getline(cin, taxiInfo[1]);
-
-    //cout << "h: " << taxiRouteTo << "\n";
 
     while (taxiInfo[2] != "1" && taxiInfo[2] != "2") {
         cout << "Виберіть спосіб оплати (готівка (1) чи кредитна картка (2)): ";
@@ -656,7 +612,7 @@ string* CashRegister::getCallTaxiInfo(string taxiInfo[]) {
 
     cout << "Введіть коментар для водія: ";
     getline(cin, taxiInfo[3]);
-    //cout << "===> " << taxiInfo[0] << endl;
+
     return taxiInfo;
 }
 

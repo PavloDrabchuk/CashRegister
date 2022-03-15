@@ -5,9 +5,7 @@
 
 #include "TicketOffice.h"
 #include "Route.h"
-//#include "Route.cpp"
 #include "Ticket.h"
-//#include "WorkingHours.cpp"
 
 class CashRegister :public TicketOffice {
 protected:
@@ -23,18 +21,13 @@ protected:
     int paper{};
 
     int countTickets = 0;
-    Ticket soldTickets[50]{};
+    Ticket soldTickets[20]{};
 
-    int returnedTicketsNumbers[50]{};
+    int returnedTicketsNumbers[20]{};
     int countReturnedTickets = 0;
     int numberReturnedTickets = 0;
 
-    /*protected:
-        unsigned int ticket{};
-        */
 public:
-    //string passenger_name{};
-
     // конструктор по замовчуванню
     CashRegister();
 
@@ -53,14 +46,6 @@ public:
 
     // деструктор
     ~CashRegister();
-
-    /*int getNumber() {
-        return number;
-    }
-
-    void setNumber(int n) {
-        this->number = n;
-    }*/
 
     unsigned int getTicket();
 
@@ -162,22 +147,9 @@ public:
 
     friend bool operator>=(const CashRegister& cashRegister1, const CashRegister& cashRegister2);
 
-
-
-    //virtual int getArea() = 0;
-    ////// virtual void showTicketType() = 0;
-    //virtual void sellTicket() = 0;
-
     void callTaxi();
 
     void showTicketType();
-
-
-    // метод викликати таксі
-    // Різниця: 
-    //   - для поїзда: адреса одна
-    //   - для літака: треба вказати термінал
-    //   - для корабля: треба вказати док(?)
 
     string* getCallTaxiInfo(string taxiInfo[]);
 
