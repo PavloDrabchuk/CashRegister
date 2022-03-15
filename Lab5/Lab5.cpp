@@ -24,7 +24,6 @@ void showTicketTypePoly(TicketOffice* t) {
     t->showTicketType();
 }
 
-
 int main()
 {
     SetConsoleCP(1251);
